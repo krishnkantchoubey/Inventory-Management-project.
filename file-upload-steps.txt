@@ -1,0 +1,6 @@
+
+1. Install Multer.-Done
+2. Changes in View.-Done
+3. Middleware to handel files.
+4. Apply That Middleware
+5. Update controller to update urls of image.
