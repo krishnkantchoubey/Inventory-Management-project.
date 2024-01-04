@@ -6,17 +6,17 @@ export default class UserController {
     res.render('register');
   }
 
-getLogin(req, res) {
+  getLogin(req, res) {
     res.render('login', { errorMessage: null });
   }
 
-postRegister(req, res) {
+  postRegister(req, res) {
     const { name, email, password } = req.body;
     UserModel.add(name, email, password);
     res.render('login', { errorMessage: null });
   }
 
-postLogin(req, res) {
+  postLogin(req, res) {
     const { email, password } = req.body;
     const user = UserModel.isValidUser(
       email,
@@ -29,22 +29,21 @@ postLogin(req, res) {
     }
     req.session.userEmail = email;
     var products = ProductModel.getAll();
-    res.render('index', { 
+    res.render('index', {
       products,
       userEmail: req.session.userEmail,
-     });
+    });
   }
 
-   logout(req, res){
-    //on logout , destroy the session
-    req.session.destroy((err)=>{
-      if(err){
+  logout(req, res) {
+    // on logout, destroy the session
+    req.session.destroy((err) => {
+      if (err) {
         console.log(err);
-      }else{
-         res.redirect('/login');
+      } else {
+        res.redirect('/login');
       }
     });
-    res.clearCookie('lastVisit'); 
+    res.clearCookie('lastVisit');
   }
-
 }

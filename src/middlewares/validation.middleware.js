@@ -23,7 +23,7 @@ const validateRequest = async (
       if (!req.file) {
         throw new Error('Image is required');
       }
-      return true; 
+      return true;
     }),
   ];
 

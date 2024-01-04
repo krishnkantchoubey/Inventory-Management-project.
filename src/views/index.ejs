@@ -1,15 +1,14 @@
 
-
 <% if(locals.lastVisit){ %>
 <div class="alert alert-primary" role="alert">
-  Your Last Visit was on : <%= locals.lastVisit %>
+    Your Last Visit was on : <%= locals.lastVisit %>
 </div>
 <% } %>
 
 <h1 class="mt-5 mb-4 header">Products</h1>
 <table class="table table-dark">
     <thead>
-        <tr> 
+        <tr>
             <th scope="col">ID</th>
             <th scope="col">Name</th>
             <th scope="col">Description</th>
@@ -40,7 +39,6 @@
                     <button class="btn btn-danger" onclick="deleteProduct('<%= product.id %>')">Delete</button>
                     <!-- <a href="/delete-product/<%= product.id %>" class="btn btn-danger">Delete</a> -->
                 </td>
-               
             </tr>
             <% }) %>
     </tbody>
